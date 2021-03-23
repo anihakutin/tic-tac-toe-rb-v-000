@@ -130,3 +130,4 @@ def play(board)
   elsif draw?(board) == true
     "The Game Was A Draw!"
   end
+end
