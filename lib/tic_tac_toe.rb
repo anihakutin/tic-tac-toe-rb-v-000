@@ -121,14 +121,12 @@ elsif win_token == "O"
 end
 
 def play(board)
-if over?(board) == false
-  turn(board)
-  play(board)
-elsif over?(board) == true
-  if !won?(board) == false
-      puts "Congratulations #{winner(board)}!"
-    elsif draw?(board) == true
-      puts "Cat's Game!"
-    end
+  until over?(board) == true
+    turn(board)
   end
-end
+
+  if won?(board) == true
+    puts "Congratulations #{winner(board)}"
+  elsif draw?(board) == true
+    "The Game Was A Draw!"
+  end
